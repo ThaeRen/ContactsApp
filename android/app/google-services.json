@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "242552606978",
+    "firebase_url": "https://contactsapp-thais.firebaseio.com",
+    "project_id": "contactsapp-thais",
+    "storage_bucket": "contactsapp-thais.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:242552606978:android:f4b62400f7858c08",
+        "android_client_info": {
+          "package_name": "com.contactsapp"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "242552606978-tpf25bg1h3qiljf4ap496od8h8u1k4t7.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBHqMMEbaTgrRZ12_jNm5ORsZyoVTdCFYo"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "242552606978-tpf25bg1h3qiljf4ap496od8h8u1k4t7.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
