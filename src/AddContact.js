@@ -177,27 +177,22 @@ export default class ContactList extends Component {
       content = <Container>
                   <Form style={styles.form}>
                     <Item inlineLabel>
-                        <Icon style={styles.icons} name="contact"/>
                         <Label>Nome</Label>
                         <Input value={this.state.name} onChange={this.updateName} />
                     </Item>
                     <Item inlineLabel>
-                        <Icon style={styles.icons} name="mail"/>
                         <Label>Email</Label>
                         <Input keyboardType={"email-address"} value={this.state.email} onChange={this.updateEmail} onBlur={this.validateEmail} />
                     </Item>
                     <Item inlineLabel>
-                        <Icon style={styles.icons} name="call"/>
                         <Label>Telefone</Label>
                         <Input keyboardType={"phone-pad"} value={this.state.phone} onChange={this.updatePhone} />
                     </Item>
                   </Form>
-                  <View style={styles.buttons}>
-                      <Button full success onPress={this.addContact}>
-                          <Icon name={icon}/>
-                          <Text>{button}</Text>
-                      </Button>
-                  </View>
+                  <Button style={{marginTop: 32, backgroundColor: "#682670", marginHorizontal: 16}} block rounded onPress={this.addContact}>
+                      <Icon name={icon}/>
+                      <Text>{button}</Text>
+                  </Button>
                 </Container>
     }
     return (

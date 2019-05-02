@@ -8,7 +8,7 @@ import { Navigation } from 'react-native-navigation';
 
 import UserView from './components/UserView';
 
-export default class ViewContact extends Component {
+export default class ContactView extends Component {
 
   constructor(props) {
     super(props);
@@ -41,11 +41,12 @@ export default class ViewContact extends Component {
                 }
             },
             backButton: {
-              color: '#fff'
+              color: material.brandWarning
             },
             background: {
-              color: material.brandPrimary
-            }
+              color: "#fff"
+            },
+            visible: false
         }
     };
   }
@@ -97,7 +98,7 @@ export default class ViewContact extends Component {
   goToEditContact = () => {
     Navigation.push(this.props.componentId, {
       component: {
-        name: 'AddContactScreen',
+        name: 'AddContact',
         passProps: {
           user: this.state.user
         }
@@ -121,16 +122,14 @@ export default class ViewContact extends Component {
         <StyleProvider style={getTheme(material)}>
           <Container>
             {content}
-            <View style={styles.buttons}>
-              <Button full info onPress={this.goToEditContact}>
-                  <Icon name="create"/>
-                  <Text>Editar Contato</Text>
-              </Button>
-              <Button full danger onPress={this.deleteContact}>
-                  <Icon name="trash"/>
-                  <Text>Excluir Contato</Text>
-              </Button>
-            </View>
+            <Button style={{marginTop: 32, backgroundColor: "#682670", marginHorizontal: 16}} block rounded onPress={this.goToEditContact}>
+                <Icon name="create"/>
+                <Text>Editar Contato</Text>
+            </Button>
+            <Button style={{marginTop: 16, backgroundColor: "#961f0f", marginHorizontal: 16}} block rounded onPress={this.deleteContact}>
+                <Icon name="trash"/>
+                <Text>Excluir Contato</Text>
+            </Button>
           </Container> 
         </StyleProvider>
       </Root>
@@ -139,10 +138,6 @@ export default class ViewContact extends Component {
 }
 
 const styles = StyleSheet.create({
-  buttons: {
-    flex: 1,
-    justifyContent: 'flex-end'
-  },
   loading: {
     justifyContent: 'center',
     alignItems: 'center'

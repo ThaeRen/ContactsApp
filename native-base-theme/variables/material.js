@@ -105,11 +105,11 @@ export default {
   checkboxTickColor: "#fff",
 
   // Color
-  brandPrimary: "#3F51B5",
-  brandInfo: "#62B1F6",
-  brandSuccess: "#5cb85c",
-  brandDanger: "#d9534f",
-  brandWarning: "#f0ad4e",
+  brandPrimary: "#737373",
+  brandInfo: "#e2e2e2",
+  brandSuccess: "##527026",
+  brandDanger: "##961f0f",
+  brandWarning: "#682670",
   brandDark: "#000",
   brandLight: "#f4f4f4",
 
@@ -145,7 +145,7 @@ export default {
   activeTab: "#fff",
   sTabBarActiveTextColor: "#007aff",
   tabBarActiveTextColor: "#fff",
-  tabActiveBgColor: "#3F51B5",
+  tabActiveBgColor: "#000",
 
   // Header
   toolbarBtnColor: "#fff",

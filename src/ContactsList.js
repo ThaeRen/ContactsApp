@@ -1,6 +1,6 @@
 import React, {Component} from 'react';
-import { StyleSheet, View, FlatList, TouchableWithoutFeedback } from 'react-native';
-import { Container, Button, Text, Icon, StyleProvider, Root, Spinner, Item, Header, Input } from 'native-base';
+import { StyleSheet, View, FlatList } from 'react-native';
+import { Container, Fab, Text, Icon, StyleProvider, Root, Spinner, Item, Header, Input } from 'native-base';
 import material from '../native-base-theme/variables/material';
 import getTheme from '../native-base-theme/components';
 import firebase from 'react-native-firebase';
@@ -43,7 +43,7 @@ export default class ContactsList extends Component {
                     }
                 },
                 background: {
-                    color: material.brandPrimary
+                    color: "#FFFFFF"
                 },
                 visible: false,
                 drawBehind: true
@@ -54,7 +54,7 @@ export default class ContactsList extends Component {
     goToAddUser = () => {
         Navigation.push(this.props.componentId, {
             component: {
-              name: 'AddContactScreen',
+              name: 'AddContact',
               passProps: {
                   user: {name: '', phone: '', email: '', id: undefined}
               }
@@ -65,7 +65,7 @@ export default class ContactsList extends Component {
     goToViewUser = (user) => {
         Navigation.push(this.props.componentId, {
             component: {
-              name: 'ViewContactScreen',
+              name: 'ContactView',
               passProps: {
                 userId: user.id,
                 userName: user.name
@@ -124,13 +124,10 @@ export default class ContactsList extends Component {
         let searchBar
         if(!this.state.loading) {
             if(this.state.users.length > 0) {
-                searchBar = <Header searchBar rounded info>
+                searchBar = <Header transparent searchBar rounded>
                                 <Item>
                                     <Icon name="search" />
                                     <Input placeholder="Buscar Contato" onChange={this.updateSearch} value={this.state.search}/>
-                                    <TouchableWithoutFeedback onPress={this.resetSearch}>
-                                        <Icon name={this.state.searchBarIcon} />
-                                    </TouchableWithoutFeedback>
                                 </Item>
                             </Header>
                 content =   <FlatList 
@@ -163,10 +160,9 @@ export default class ContactsList extends Component {
                         {searchBar}
                         {content}
                         <View style={styles.buttons}>
-                            <Button full success onPress={this.goToAddUser}>
+                            <Fab style={{backgroundColor: "#682670"}} onPress={this.goToAddUser}>
                                 <Icon name="add"/>
-                                <Text>Cadastrar Novo Contato</Text>
-                            </Button>
+                            </Fab>
                         </View>
                     </Container>
                 </StyleProvider>
